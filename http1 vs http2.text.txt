@@ -1,0 +1,17 @@
+what is HTTP?
+HTTP stands for hypertext transfer protocol, and it is the basis for almost all web applications. More specifically, HTTP is the method computers and servers use to request and send information.
+HTTP/1.1: 
+* It uses works on the textual format
+* There is head of line blocking that blocks all the requests behind it until it doesn’t get its all resources.For better understanding, before sending the request and the response there is a TCP connection established between client & server. again you make a request to the server for image img.jpg & the server gives a response as an image img.jpg. the connection was not lost here after the first request because we add a keep-alive header which is the part of the request so there is an open connection between the server & client.
+* It compresses data by itself 
+Drawbacks 
+* there is a persistent connection which means several requests & responses are merged in a single connection: 
+* The  problem is HTTP/1.1 transfer all the requests & responses in the plain text message form. 
+* The head of line blocking in which TCP connection is blocked all other requests until the response does not receive. all the information related to the header file is repeated in every request
+HTTP/2: 
+* It works on the binary protocol.
+* It was developed over the SPDY protocol. HTTP/2 works on the binary framing layer instead of textual that converts all the messages in binary format. It works on fully multiplexed that is one TCP connection is used for multiple requests.
+* It allows multiplexing so one TCP connection is required for multiple requests.
+* It uses PUSH frame by server that collects all multiple pages 
+*  HTTP/2 uses HPACK for data compression,which is used to split data from header, it compresses the header. The server sends all the other files like CSS & JS without the request of the client using the PUSH frame
+
